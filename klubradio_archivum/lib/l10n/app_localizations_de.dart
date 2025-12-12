@@ -98,6 +98,10 @@ class AppLocalizationsDe extends AppLocalizations {
   String get podcastDetailSubscribeButton => 'Abonnieren';
 
   @override
+  String get homeScreenSubscribedPodcastsEmptyHint =>
+      'Noch keine Abos – entdecke Podcasts und tippe auf „Abonnieren“.';
+
+  @override
   String get homeScreenSubscribedPodcastsTitle => 'Abonnierte Sendungen';
 
   @override
@@ -295,8 +299,20 @@ class AppLocalizationsDe extends AppLocalizations {
   String get podcastDetailScreenSubscribeSuccess => 'Erfolgreich abonniert!';
 
   @override
-  String get podcastDetailScreenUnsubscribeSuccess =>
-      'Abonnement erfolgreich beendet!';
+  String get podcastDetailScreenUnsubscribeSuccess => 'Erfolgreich abbestellt!';
+
+  @override
+  String get unsubscribeDialogTitle => 'Abbestellen';
+
+  @override
+  String get unsubscribeDialogContent =>
+      'Möchten Sie die heruntergeladenen Episoden für diesen Podcast löschen?';
+
+  @override
+  String get unsubscribeDialogDeleteButton => 'Episoden löschen';
+
+  @override
+  String get unsubscribeDialogKeepButton => 'Episoden behalten';
 
   @override
   String get nowPlayingScreenTitle => 'Aktuelle Wiedergabe';
@@ -318,4 +334,161 @@ class AppLocalizationsDe extends AppLocalizations {
   @override
   String get podcastNotFoundError =>
       'Die ausgewählte Sendung konnte leider nicht gefunden werden.';
+
+  @override
+  String get podcastListItem_subscribed => 'Abonniert';
+
+  @override
+  String get podcastListItem_unsubscribe => 'Abo beenden';
+
+  @override
+  String get podcastListItem_subscribe => 'Abonnieren';
+
+  @override
+  String get podcastListItem_unsubscribed => 'Abo beendet';
+
+  @override
+  String get podcastListItem_subtitleFallback => 'Klubrádió-Sendung';
+
+  @override
+  String get podcastListItem_openDetails => 'Podcastdetails öffnen';
+
+  @override
+  String get downloads_tab_active => 'Aktiv';
+
+  @override
+  String get downloads_tab_done => 'Fertig';
+
+  @override
+  String get downloads_empty_active => 'Keine aktiven Downloads';
+
+  @override
+  String get downloads_empty_done => 'Keine fertigen Downloads';
+
+  @override
+  String get downloads_status_waiting => 'Wartet';
+
+  @override
+  String get downloads_status_running => 'Lädt';
+
+  @override
+  String get downloads_status_done => 'Fertig';
+
+  @override
+  String get downloads_status_failed => 'Fehler';
+
+  @override
+  String get downloads_status_canceled => 'Abgebrochen';
+
+  @override
+  String get downloads_status_unknown => 'Unbekannt';
+
+  @override
+  String get downloads_action_pause => 'Pause';
+
+  @override
+  String get downloads_action_resume => 'Fortsetzen';
+
+  @override
+  String get downloads_action_cancel => 'Abbrechen';
+
+  @override
+  String get downloads_action_delete => 'Löschen';
+
+  @override
+  String get ep_action_resume => 'Fortsetzen';
+
+  @override
+  String get ep_action_downloaded => 'Heruntergeladen';
+
+  @override
+  String get ep_action_retry => 'Erneut versuchen';
+
+  @override
+  String get ep_action_download => 'Download';
+
+  @override
+  String get settings_title_downloads => 'Downloads';
+
+  @override
+  String get settings_wifi_only => 'Nur WLAN';
+
+  @override
+  String get settings_wifi_only_mobile_default => 'Standard auf Mobil: AN';
+
+  @override
+  String get settings_wifi_only_desktop_default => 'Standard auf Desktop: AUS';
+
+  @override
+  String get settings_max_parallel => 'Max. gleichzeitige Downloads';
+
+  @override
+  String get settings_retention_section => 'Aufbewahrung';
+
+  @override
+  String get settings_keep_all => 'Alle behalten';
+
+  @override
+  String get settings_keep_latest_label => 'Nur die letzten n';
+
+  @override
+  String get settings_keep_latest => 'Letzte Episoden behalten';
+
+  @override
+  String get settings_keep_latest_hint =>
+      'Behält pro Podcast die neuesten n Episoden.';
+
+  @override
+  String get settings_delete_after_heard_label =>
+      'Nach „gehört” in x Stunden löschen';
+
+  @override
+  String get settings_delete_after_hours => 'Löschen nach (Stunden)';
+
+  @override
+  String get settings_delete_after_hint =>
+      'Nach dem Anhören automatisch nach x Stunden entfernen.';
+
+  @override
+  String get settings_zero_off => '0 = AUS';
+
+  @override
+  String get settings_autodownload_subscriptions =>
+      'Automatisch abonnierte Episoden herunterladen';
+
+  @override
+  String get settings_autodownload_subscriptions_hint =>
+      'Neue Episoden von abonnierten Podcasts automatisch herunterladen.';
+
+  @override
+  String get profileScreenNoRecentlyPlayed => 'Noch nichts kürzlich gehört.';
+
+  @override
+  String get profileScreenSubscriptionsTitle => 'Abonnierte Sendungen';
+
+  @override
+  String get profileScreenAppIdTitle => 'App-ID';
+
+  @override
+  String get profileScreenIdCopied => 'ID kopiert';
+
+  @override
+  String get profileScreenPlaybackSpeedTitle => 'Wiedergabegeschwindigkeit';
+
+  @override
+  String profileScreenPlaybackSpeedValue(Object value) {
+    return '$value×';
+  }
+
+  @override
+  String get commonOk => 'OK';
+
+  @override
+  String get commonCancel => 'Abbrechen';
+
+  @override
+  String get commonCount => 'Anzahl';
+
+  @override
+  String get commonDone => 'Fertig';
 }

@@ -6,9 +6,33 @@ The Klubrádió Archive App is a cross-platform mobile application built with Fl
 
 TODO
 
+```powershell
+Get-ChildItem -Path .\lib -Filter *.dart* -Recurse | ForEach-Object { $_.FullName | Resolve-Path -Relative }
+```
+
+## Update
+
+```
+flutter pub add background_downloader cupertino_icons drift hive hive_flutter html http image intl just_audio just_audio_windows markdown_widget package_info_plus path path_provider permission_handler provider shared_preferences sqlite3_flutter_libs url_launcher xml
+flutter pub add --dev build_runner change_app_package_name drift_dev flutter_lints intl_translation
+flutter pub add uuid device_info_plus
+
+flutter pub get
+```
+
 ### test api
 
 `flutter test --dart-define API_SERVICE_LIVE_TESTS=true .\test\services\api_service_live_test.dart`
+
+### test download
+
+`flutter test --dart-define DOWNLOAD_LIVE_TESTS=true .\test\integration_test\download_manager_live_test.dart`
+```
+flutter drive -d windows --driver=test_driver/integration_test.dart --target=integration_test/download_manager_live_test.dart --dart-define DOWNLOAD_LIVE_TESTS=true
+
+flutter drive -d windows --driver=test_driver/integration_test.dart --target=integration_test/download_manager_live_test.dart --dart-define DOWNLOAD_LIVE_TESTS=true --dart-define DOWNLOAD_TEST_TIMEOUT_SEC=720 -v
+```
+
 
 ### update i10n run
 
@@ -18,42 +42,62 @@ TODO
 
 `dart run flutter_launcher_icons`
 
+### Rebuild if DB schema changes
+`dart run build_runner build --delete-conflicting-outputs`
+
 
 ### Setup Note:
 For a podcast app, ensure you configure the storage location to a directory
 that is suitable for large media files and accessible to your player.
 
-## Project Focus: Supabase-Backed Download Manager
+### iOS Setup (für spätere Aktivierung)
 
-This revised plan focuses on integrating the `background_downloader` package with Supabase for user authentication and persistent task storage.
+Wenn iOS-Builds genutzt werden:
+1. In **Xcode → Signing & Capabilities → Background Modes** aktivieren:
+    - [x] Background fetch
+    - [x] Background processing
+    - (optional) Audio, falls Wiedergabe im Hintergrund
+2. Keine weiteren Berechtigungen nötig – background_downloader
+   nutzt iOS-APIs automatisch.
+3. 
 
-## I. Core `background_downloader` Integration
+### Was noch offen ist
 
-| Step                    | Detail                                                                                                                                                                 | Status |
-|-------------------------|------------------------------------------------------------------------------------------------------------------------------------------------------------------------|--------|
-| 1. Package Integration  | Add `background_downloader` to `pubspec.yaml`. Handle necessary platform configuration (e.g., iOS `info.plist`, AndroidManifest permissions).                          | [ ]    |
-| 2. Permissions Handling | Implement request logic for necessary storage permissions (especially on Android).                                                                                     | [ ]    |
-| 3. Define Storage Path  | Determine and configure the correct platform-specific storage directory (e.g., `getApplicationDocumentsDirectory()` or `getExternalStorageDirectory()` for downloads). | [ ]    |
-| 4. Batch Download Logic | Create a function to accept a list of URLs and start them as individual or grouped `DownloadTask` objects.                                                             | [ ]    |
-| 5. Task Monitoring      | Implement the `background_downloader` callback system to listen for changes in `TaskStatus` and `TaskProgress`.                                                        | [ ]    |
-| 6. Task Actions         | Implement UI functions for user control: Pause, Resume, Cancel, and Delete (both task and local file).                                                                 | [ ]    |
+1. **Abonnieren (Subscriptions) – lokal in DB**
 
-## II. Supabase Backend and State Management
+   * UI: „Abonnieren“/„Deabonnieren“-Button im Podcast-Detail.
+   * DB/DAO:
 
-| Step                              | Detail                                                                                                                                                          | Status |
-|-----------------------------------|-----------------------------------------------------------------------------------------------------------------------------------------------------------------|--------|
-| 7. Supabase Project Setup         | Initialize the Supabase project. Create a `downloads` table with required columns (e.g., `user_id`, `task_id`, `file_url`, `status`, `progress`, `path_local`). | [ ]    |
-| 8. Supabase Initialization & Auth | Initialize the Supabase client in the Flutter app. Implement sign-in/sign-up and retrieve the current user's ID using `supabase.auth.currentUser!.id`.          | [ ]    |
-| 9. Task Metadata Storage          | Immediately upon starting a download, insert the task metadata (ID, URL, user ID, initial status) into the `downloads` table.                                   | [ ]    |
-| 10. Real-Time Status Sync         | Use Supabase Realtime to subscribe to changes on the `downloads` table, filtered by the logged-in user's ID, to populate the main UI list.                      | [ ]    |
-| 11. Task Status Update            | Within the `background_downloader` callbacks, use the Supabase client to update the corresponding row's `status`, `progress`, and `path_local` in real-time.    | [ ]    |
+      * `subscriptions`-Tabelle (haben wir).
+      * DAO-Methoden: `toggleSubscribe(podcastId)`, `isSubscribed(podcastId)`, `watchAll()`.
+   * Auto-Download je Abo:
 
-## III. User Interface (UI) and Experience
+      * Feld `autoDownloadN` je Abo.
+      * Bei neuem Abo → `enqueueLatestN(podcastId, n)`.
+      * Bei App-Start (oder Pull-to-refresh) → für alle Abos prüfen/enqueuen.
+   * Settings-Panel: Optional „Standard für neue Abos“ (z. B. 3 Folgen).
 
-| Step                     | Detail                                                                                                                                                                           | Status |
-|--------------------------|----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|--------|
-| 12. Main Task List UI    | Build a scrollable list view that displays all tasks, showing URL/file name, status (e.g., "Downloading 50%", "Complete", "Paused"), and progress bar.                           | [ ]    |
-| 13. Playback Integration | If the file type is detected as playable (e.g., MP3, MP4), add a "Play" button that launches the file using a suitable Flutter package (e.g., `audioplayers` or `video_player`). | [ ]    |
-| 14. Error & Resume UI    | Clearly display error messages and provide a visible "Retry/Resume" button for failed or paused tasks.                                                                           | [ ]    |
-| 15. Storage Management   | Implement a simple mechanism (e.g., a button on completed tasks) to permanently delete the task record from the `downloads` table and the file from local storage.               | [ ]    |
+2. **Downloader-Feinschliff**
+
+   * Guards testen: nach `complete` ignorieren wir spätere Events 
+   * Windows Pfad/Branding später: `com.example` → Company/Product in `windows/runner` anpassen.
+
+3. **Integrationstest**
+
+   * ✅ Läuft grün, misst Größe & Speed, dynamisches Timeout.
+   * kleinen Negativtest (ungültige URL ⇒ `failed`) ergänzen.
+   * kleinen Negativtest (404 URL ⇒ `failed`) ergänzen.
+
+4. **README/Onboarding**
+
+   * Setup iOS (Xcode Permissions, Background Modes) – TODO Abschnitt.
+   * Windows Build-Prereqs (VS Build Tools / Desktop C++).
+   * „How to run integration tests“ (drive vs. test, Dart-defines).
+   * Storage-Pfade & Retention-Regeln dokumentieren.
+
+
+## Note
+ 
+ - https://www.klubradio.hu/musorok/{podcastId}
+
 

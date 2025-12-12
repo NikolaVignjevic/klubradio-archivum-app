@@ -262,6 +262,12 @@ abstract class AppLocalizations {
   /// **'Subscribe'**
   String get podcastDetailSubscribeButton;
 
+  /// No description provided for @homeScreenSubscribedPodcastsEmptyHint.
+  ///
+  /// In en, this message translates to:
+  /// **'No subscriptions yet — discover podcasts and tap “Subscribe”.'**
+  String get homeScreenSubscribedPodcastsEmptyHint;
+
   /// Section title for subscribed podcasts on the home screen.
   ///
   /// In en, this message translates to:
@@ -592,6 +598,30 @@ abstract class AppLocalizations {
   /// **'Unsubscribed successfully!'**
   String get podcastDetailScreenUnsubscribeSuccess;
 
+  /// No description provided for @unsubscribeDialogTitle.
+  ///
+  /// In en, this message translates to:
+  /// **'Unsubscribe'**
+  String get unsubscribeDialogTitle;
+
+  /// No description provided for @unsubscribeDialogContent.
+  ///
+  /// In en, this message translates to:
+  /// **'Do you want to delete the downloaded episodes for this podcast?'**
+  String get unsubscribeDialogContent;
+
+  /// No description provided for @unsubscribeDialogDeleteButton.
+  ///
+  /// In en, this message translates to:
+  /// **'Delete Episodes'**
+  String get unsubscribeDialogDeleteButton;
+
+  /// No description provided for @unsubscribeDialogKeepButton.
+  ///
+  /// In en, this message translates to:
+  /// **'Keep Episodes'**
+  String get unsubscribeDialogKeepButton;
+
   /// Title for the 'Now Playing' screen.
   ///
   /// In en, this message translates to:
@@ -621,6 +651,306 @@ abstract class AppLocalizations {
   /// In en, this message translates to:
   /// **'Sorry, the selected show could not be found.'**
   String get podcastNotFoundError;
+
+  /// No description provided for @podcastListItem_subscribed.
+  ///
+  /// In en, this message translates to:
+  /// **'Subscribed'**
+  String get podcastListItem_subscribed;
+
+  /// No description provided for @podcastListItem_unsubscribe.
+  ///
+  /// In en, this message translates to:
+  /// **'Unsubscribe'**
+  String get podcastListItem_unsubscribe;
+
+  /// No description provided for @podcastListItem_subscribe.
+  ///
+  /// In en, this message translates to:
+  /// **'Subscribe'**
+  String get podcastListItem_subscribe;
+
+  /// No description provided for @podcastListItem_unsubscribed.
+  ///
+  /// In en, this message translates to:
+  /// **'Unsubscribed'**
+  String get podcastListItem_unsubscribed;
+
+  /// No description provided for @podcastListItem_subtitleFallback.
+  ///
+  /// In en, this message translates to:
+  /// **'Klubrádió show'**
+  String get podcastListItem_subtitleFallback;
+
+  /// No description provided for @podcastListItem_openDetails.
+  ///
+  /// In en, this message translates to:
+  /// **'Open podcast details'**
+  String get podcastListItem_openDetails;
+
+  /// No description provided for @downloads_tab_active.
+  ///
+  /// In en, this message translates to:
+  /// **'Active'**
+  String get downloads_tab_active;
+
+  /// No description provided for @downloads_tab_done.
+  ///
+  /// In en, this message translates to:
+  /// **'Completed'**
+  String get downloads_tab_done;
+
+  /// No description provided for @downloads_empty_active.
+  ///
+  /// In en, this message translates to:
+  /// **'No active downloads'**
+  String get downloads_empty_active;
+
+  /// No description provided for @downloads_empty_done.
+  ///
+  /// In en, this message translates to:
+  /// **'No completed downloads'**
+  String get downloads_empty_done;
+
+  /// No description provided for @downloads_status_waiting.
+  ///
+  /// In en, this message translates to:
+  /// **'Waiting'**
+  String get downloads_status_waiting;
+
+  /// No description provided for @downloads_status_running.
+  ///
+  /// In en, this message translates to:
+  /// **'Downloading'**
+  String get downloads_status_running;
+
+  /// No description provided for @downloads_status_done.
+  ///
+  /// In en, this message translates to:
+  /// **'Completed'**
+  String get downloads_status_done;
+
+  /// No description provided for @downloads_status_failed.
+  ///
+  /// In en, this message translates to:
+  /// **'Failed'**
+  String get downloads_status_failed;
+
+  /// No description provided for @downloads_status_canceled.
+  ///
+  /// In en, this message translates to:
+  /// **'Canceled'**
+  String get downloads_status_canceled;
+
+  /// No description provided for @downloads_status_unknown.
+  ///
+  /// In en, this message translates to:
+  /// **'Unknown'**
+  String get downloads_status_unknown;
+
+  /// No description provided for @downloads_action_pause.
+  ///
+  /// In en, this message translates to:
+  /// **'Pause'**
+  String get downloads_action_pause;
+
+  /// No description provided for @downloads_action_resume.
+  ///
+  /// In en, this message translates to:
+  /// **'Resume'**
+  String get downloads_action_resume;
+
+  /// No description provided for @downloads_action_cancel.
+  ///
+  /// In en, this message translates to:
+  /// **'Cancel'**
+  String get downloads_action_cancel;
+
+  /// No description provided for @downloads_action_delete.
+  ///
+  /// In en, this message translates to:
+  /// **'Delete'**
+  String get downloads_action_delete;
+
+  /// No description provided for @ep_action_resume.
+  ///
+  /// In en, this message translates to:
+  /// **'Resume'**
+  String get ep_action_resume;
+
+  /// No description provided for @ep_action_downloaded.
+  ///
+  /// In en, this message translates to:
+  /// **'Downloaded'**
+  String get ep_action_downloaded;
+
+  /// No description provided for @ep_action_retry.
+  ///
+  /// In en, this message translates to:
+  /// **'Retry'**
+  String get ep_action_retry;
+
+  /// No description provided for @ep_action_download.
+  ///
+  /// In en, this message translates to:
+  /// **'Download'**
+  String get ep_action_download;
+
+  /// No description provided for @settings_title_downloads.
+  ///
+  /// In en, this message translates to:
+  /// **'Downloads'**
+  String get settings_title_downloads;
+
+  /// No description provided for @settings_wifi_only.
+  ///
+  /// In en, this message translates to:
+  /// **'Wi-Fi only'**
+  String get settings_wifi_only;
+
+  /// No description provided for @settings_wifi_only_mobile_default.
+  ///
+  /// In en, this message translates to:
+  /// **'Default on mobile: ON'**
+  String get settings_wifi_only_mobile_default;
+
+  /// No description provided for @settings_wifi_only_desktop_default.
+  ///
+  /// In en, this message translates to:
+  /// **'Default on desktop: OFF'**
+  String get settings_wifi_only_desktop_default;
+
+  /// No description provided for @settings_max_parallel.
+  ///
+  /// In en, this message translates to:
+  /// **'Max concurrent downloads'**
+  String get settings_max_parallel;
+
+  /// No description provided for @settings_retention_section.
+  ///
+  /// In en, this message translates to:
+  /// **'Retention'**
+  String get settings_retention_section;
+
+  /// No description provided for @settings_keep_all.
+  ///
+  /// In en, this message translates to:
+  /// **'Keep all'**
+  String get settings_keep_all;
+
+  /// No description provided for @settings_keep_latest_label.
+  ///
+  /// In en, this message translates to:
+  /// **'Keep only the last n'**
+  String get settings_keep_latest_label;
+
+  /// No description provided for @settings_keep_latest.
+  ///
+  /// In en, this message translates to:
+  /// **'Keep latest episodes'**
+  String get settings_keep_latest;
+
+  /// No description provided for @settings_keep_latest_hint.
+  ///
+  /// In en, this message translates to:
+  /// **'Keeps the newest n episodes per podcast.'**
+  String get settings_keep_latest_hint;
+
+  /// No description provided for @settings_delete_after_heard_label.
+  ///
+  /// In en, this message translates to:
+  /// **'Delete x hours after listened'**
+  String get settings_delete_after_heard_label;
+
+  /// No description provided for @settings_delete_after_hours.
+  ///
+  /// In en, this message translates to:
+  /// **'Delete after (hours)'**
+  String get settings_delete_after_hours;
+
+  /// No description provided for @settings_delete_after_hint.
+  ///
+  /// In en, this message translates to:
+  /// **'Automatically remove x hours after playback.'**
+  String get settings_delete_after_hint;
+
+  /// No description provided for @settings_zero_off.
+  ///
+  /// In en, this message translates to:
+  /// **'0 = OFF'**
+  String get settings_zero_off;
+
+  /// No description provided for @settings_autodownload_subscriptions.
+  ///
+  /// In en, this message translates to:
+  /// **'Autodownload subscribed episodes'**
+  String get settings_autodownload_subscriptions;
+
+  /// No description provided for @settings_autodownload_subscriptions_hint.
+  ///
+  /// In en, this message translates to:
+  /// **'Automatically download new episodes from subscribed podcasts.'**
+  String get settings_autodownload_subscriptions_hint;
+
+  /// No description provided for @profileScreenNoRecentlyPlayed.
+  ///
+  /// In en, this message translates to:
+  /// **'No recently played episodes yet.'**
+  String get profileScreenNoRecentlyPlayed;
+
+  /// No description provided for @profileScreenSubscriptionsTitle.
+  ///
+  /// In en, this message translates to:
+  /// **'Subscribed shows'**
+  String get profileScreenSubscriptionsTitle;
+
+  /// No description provided for @profileScreenAppIdTitle.
+  ///
+  /// In en, this message translates to:
+  /// **'App ID'**
+  String get profileScreenAppIdTitle;
+
+  /// No description provided for @profileScreenIdCopied.
+  ///
+  /// In en, this message translates to:
+  /// **'ID copied'**
+  String get profileScreenIdCopied;
+
+  /// No description provided for @profileScreenPlaybackSpeedTitle.
+  ///
+  /// In en, this message translates to:
+  /// **'Playback speed'**
+  String get profileScreenPlaybackSpeedTitle;
+
+  /// No description provided for @profileScreenPlaybackSpeedValue.
+  ///
+  /// In en, this message translates to:
+  /// **'{value}×'**
+  String profileScreenPlaybackSpeedValue(Object value);
+
+  /// No description provided for @commonOk.
+  ///
+  /// In en, this message translates to:
+  /// **'OK'**
+  String get commonOk;
+
+  /// No description provided for @commonCancel.
+  ///
+  /// In en, this message translates to:
+  /// **'Cancel'**
+  String get commonCancel;
+
+  /// No description provided for @commonCount.
+  ///
+  /// In en, this message translates to:
+  /// **'Count'**
+  String get commonCount;
+
+  /// No description provided for @commonDone.
+  ///
+  /// In en, this message translates to:
+  /// **'Fertig'**
+  String get commonDone;
 }
 
 class _AppLocalizationsDelegate

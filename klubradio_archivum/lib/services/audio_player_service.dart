@@ -1,5 +1,7 @@
 import 'dart:async';
+import 'dart:io';
 
+import 'package:flutter/foundation.dart'; // Import for kIsWeb and debugPrint
 import 'package:just_audio/just_audio.dart';
 
 import '../models/episode.dart';
@@ -29,14 +31,59 @@ class AudioPlayerService {
   Future<void> loadEpisode(Episode episode, {bool autoplay = true}) async {
     _currentEpisode = episode;
     try {
-      await _player.setUrl(episode.audioUrl);
-      if (autoplay) {
-        await _player.play();
+      final local = episode.localFilePath;
+      bool loadedSuccessfully = false;
+
+      // Try loading local file first, only if not on web
+      if (!kIsWeb && local != null && local.isNotEmpty && await File(local).exists()) {
+        try {
+          await _player.setFilePath(local);
+          debugPrint('Successfully loaded local file: $local');
+          loadedSuccessfully = true;
+        } catch (e, st) {
+          debugPrint('Error loading local file $local: $e\n$st');
+          // Fallback to remote if local fails
+        }
+      }
+
+      // If local failed, was not available, or on web, try remote URL
+      if (!loadedSuccessfully) {
+        try {
+          await _player.setUrl(episode.audioUrl);
+          debugPrint('Successfully loaded remote URL: ${episode.audioUrl}');
+          loadedSuccessfully = true;
+        } catch (e, st) {
+          debugPrint('Error loading remote URL ${episode.audioUrl}: $e\n$st');
+          // All attempts failed
+        }
+      }
+
+      if (loadedSuccessfully) {
+        if (autoplay) {
+          await _player.play();
+        }
+      } else {
+        // If neither local nor remote could be loaded, clear current episode and stop
+        _currentEpisode = null;
+        await _player.stop();
+        // Potentially add an error message to a stream/notifier for UI to display
+        debugPrint('Failed to load audio for episode: ${episode.id}');
       }
     } on PlayerException catch (error) {
+      debugPrint('PlayerException in loadEpisode: $error');
       _bufferingController.addError(error);
+      _currentEpisode = null; // Clear on player-specific errors too
+      await _player.stop();
     } on PlayerInterruptedException catch (error) {
+      debugPrint('PlayerInterruptedException in loadEpisode: $error');
       _bufferingController.addError(error);
+      _currentEpisode = null; // Clear on player-specific errors too
+      await _player.stop();
+    } catch (e, st) { // Catch any other unexpected exceptions
+      debugPrint('Unexpected error in loadEpisode: $e\n$st');
+      _bufferingController.addError(e);
+      _currentEpisode = null; // Clear on any unexpected errors
+      await _player.stop();
     }
   }
 

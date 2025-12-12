@@ -127,6 +127,7 @@
     "description": "Button label to subscribe to the podcast."
   },
 
+  "homeScreenSubscribedPodcastsEmptyHint": "No subscriptions yet — discover podcasts and tap “Subscribe”.",
   "homeScreenSubscribedPodcastsTitle": "Subscribed Shows",
   "@homeScreenSubscribedPodcastsTitle": {
     "description": "Section title for subscribed podcasts on the home screen."
@@ -410,6 +411,11 @@
     "description": "Snackbar message shown after successfully unsubscribing from a podcast."
   },
 
+  "unsubscribeDialogTitle": "Unsubscribe",
+  "unsubscribeDialogContent": "Do you want to delete the downloaded episodes for this podcast?",
+  "unsubscribeDialogDeleteButton": "Delete Episodes",
+  "unsubscribeDialogKeepButton": "Keep Episodes",
+
   "nowPlayingScreenTitle": "Now Playing",
   "@nowPlayingScreenTitle": {
     "description": "Title for the 'Now Playing' screen."
@@ -447,6 +453,61 @@
   "podcastNotFoundError": "Sorry, the selected show could not be found.",
   "@podcastNotFoundError": {
     "description": "Error message when a podcast selected from a list can't be fetched."
-  }
+  },
+
+  "podcastListItem_subscribed": "Subscribed",
+  "podcastListItem_unsubscribe": "Unsubscribe",
+  "podcastListItem_subscribe": "Subscribe",
+  "podcastListItem_unsubscribed": "Unsubscribed",
+  "podcastListItem_subtitleFallback": "Klubrádió show",
+  "podcastListItem_openDetails": "Open podcast details",
+
+  "downloads_tab_active": "Active",
+  "downloads_tab_done": "Completed",
+  "downloads_empty_active": "No active downloads",
+  "downloads_empty_done": "No completed downloads",
+  "downloads_status_waiting": "Waiting",
+  "downloads_status_running": "Downloading",
+  "downloads_status_done": "Completed",
+  "downloads_status_failed": "Failed",
+  "downloads_status_canceled": "Canceled",
+  "downloads_status_unknown": "Unknown",
+  "downloads_action_pause": "Pause",
+  "downloads_action_resume": "Resume",
+  "downloads_action_cancel": "Cancel",
+  "downloads_action_delete": "Delete",
+
+  "ep_action_resume": "Resume",
+  "ep_action_downloaded": "Downloaded",
+  "ep_action_retry": "Retry",
+  "ep_action_download": "Download",
+
+  "settings_title_downloads": "Downloads",
+  "settings_wifi_only": "Wi-Fi only",
+  "settings_wifi_only_mobile_default": "Default on mobile: ON",
+  "settings_wifi_only_desktop_default": "Default on desktop: OFF",
+  "settings_max_parallel": "Max concurrent downloads",
+  "settings_retention_section": "Retention",
+  "settings_keep_all": "Keep all",
+  "settings_keep_latest_label": "Keep only the last n",
+  "settings_keep_latest": "Keep latest episodes",
+  "settings_keep_latest_hint": "Keeps the newest n episodes per podcast.",
+  "settings_delete_after_heard_label": "Delete x hours after listened",
+  "settings_delete_after_hours": "Delete after (hours)",
+  "settings_delete_after_hint": "Automatically remove x hours after playback.",
+  "settings_zero_off": "0 = OFF",
+  "settings_autodownload_subscriptions": "Autodownload subscribed episodes",
+  "settings_autodownload_subscriptions_hint": "Automatically download new episodes from subscribed podcasts.",
+
+  "profileScreenNoRecentlyPlayed": "No recently played episodes yet.",
+  "profileScreenSubscriptionsTitle": "Subscribed shows",
+  "profileScreenAppIdTitle": "App ID",
+  "profileScreenIdCopied": "ID copied",
+  "profileScreenPlaybackSpeedTitle": "Playback speed",
+  "profileScreenPlaybackSpeedValue": "{value}×",
+  "commonOk": "OK",
+  "commonCancel": "Cancel",
+  "commonCount": "Count",
+  "commonDone": "Fertig"
 
 }

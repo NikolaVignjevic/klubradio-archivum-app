@@ -2,8 +2,9 @@ import 'package:flutter/material.dart';
 import 'package:url_launcher/url_launcher.dart';
 import 'package:klubradio_archivum/l10n/app_localizations.dart';
 
-import 'playback_settings.dart';
-import 'theme_settings.dart';
+import 'package:klubradio_archivum/screens/settings_screen/playback_settings.dart';
+import 'package:klubradio_archivum/screens/settings_screen/theme_settings.dart';
+import 'package:klubradio_archivum/screens/settings_screen/download_settings_panel.dart';
 
 class SettingsScreen extends StatelessWidget {
   const SettingsScreen({super.key});
@@ -16,6 +17,8 @@ class SettingsScreen extends StatelessWidget {
       padding: const EdgeInsets.all(16),
       children: <Widget>[
         const ThemeSettings(),
+        const SizedBox(height: 16),
+        const DownloadSettingsPanel(),
         const SizedBox(height: 16),
         const PlaybackSettings(),
         const SizedBox(height: 16),

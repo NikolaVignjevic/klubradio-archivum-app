@@ -98,6 +98,10 @@ class AppLocalizationsHu extends AppLocalizations {
   String get podcastDetailSubscribeButton => 'Feliratkozás';
 
   @override
+  String get homeScreenSubscribedPodcastsEmptyHint =>
+      'Még nincsenek feliratkozások – fedezd fel a podcasteket és koppints a „Feliratkozás” gombra.';
+
+  @override
   String get homeScreenSubscribedPodcastsTitle => 'Feliratkozott műsorok';
 
   @override
@@ -293,6 +297,19 @@ class AppLocalizationsHu extends AppLocalizations {
   String get podcastDetailScreenUnsubscribeSuccess => 'Leiratkozás sikeres!';
 
   @override
+  String get unsubscribeDialogTitle => 'Leiratkozás';
+
+  @override
+  String get unsubscribeDialogContent =>
+      'Törölni szeretné a letöltött epizódokat ehhez a podcasthoz?';
+
+  @override
+  String get unsubscribeDialogDeleteButton => 'Epizódok törlése';
+
+  @override
+  String get unsubscribeDialogKeepButton => 'Epizódok megtartása';
+
+  @override
   String get nowPlayingScreenTitle => 'Most szól';
 
   @override
@@ -311,4 +328,163 @@ class AppLocalizationsHu extends AppLocalizations {
   @override
   String get podcastNotFoundError =>
       'Sajnos a kiválasztott műsor nem található.';
+
+  @override
+  String get podcastListItem_subscribed => 'Feliratkozva';
+
+  @override
+  String get podcastListItem_unsubscribe => 'Leiratkozás';
+
+  @override
+  String get podcastListItem_subscribe => 'Feliratkozás';
+
+  @override
+  String get podcastListItem_unsubscribed => 'Leiratkozva';
+
+  @override
+  String get podcastListItem_subtitleFallback => 'Klubrádió műsor';
+
+  @override
+  String get podcastListItem_openDetails => 'Műsor részleteinek megnyitása';
+
+  @override
+  String get downloads_tab_active => 'Aktív';
+
+  @override
+  String get downloads_tab_done => 'Kész';
+
+  @override
+  String get downloads_empty_active => 'Nincs aktív letöltés';
+
+  @override
+  String get downloads_empty_done => 'Nincsenek kész letöltések';
+
+  @override
+  String get downloads_status_waiting => 'Várakozik';
+
+  @override
+  String get downloads_status_running => 'Letöltés';
+
+  @override
+  String get downloads_status_done => 'Kész';
+
+  @override
+  String get downloads_status_failed => 'Hiba';
+
+  @override
+  String get downloads_status_canceled => 'Megszakítva';
+
+  @override
+  String get downloads_status_unknown => 'Ismeretlen';
+
+  @override
+  String get downloads_action_pause => 'Szünet';
+
+  @override
+  String get downloads_action_resume => 'Folytatás';
+
+  @override
+  String get downloads_action_cancel => 'Megállítás';
+
+  @override
+  String get downloads_action_delete => 'Törlés';
+
+  @override
+  String get ep_action_resume => 'Folytatás';
+
+  @override
+  String get ep_action_downloaded => 'Letöltve';
+
+  @override
+  String get ep_action_retry => 'Újra';
+
+  @override
+  String get ep_action_download => 'Letöltés';
+
+  @override
+  String get settings_title_downloads => 'Letöltések';
+
+  @override
+  String get settings_wifi_only => 'Csak Wi-Fi-n';
+
+  @override
+  String get settings_wifi_only_mobile_default => 'Alapértelmezett mobilon: BE';
+
+  @override
+  String get settings_wifi_only_desktop_default =>
+      'Alapértelmezett asztali gépen: KI';
+
+  @override
+  String get settings_max_parallel => 'Max. párhuzamos letöltés';
+
+  @override
+  String get settings_retention_section => 'Megőrzés';
+
+  @override
+  String get settings_keep_all => 'Mindet megtartja';
+
+  @override
+  String get settings_keep_latest_label => 'Csak az utolsó n';
+
+  @override
+  String get settings_keep_latest => 'Legújabb epizódok megtartása';
+
+  @override
+  String get settings_keep_latest_hint =>
+      'Podcastonként a legújabb n epizód marad meg.';
+
+  @override
+  String get settings_delete_after_heard_label =>
+      'Törlés x órával lejátszás után';
+
+  @override
+  String get settings_delete_after_hours => 'Törlés ennyi óra után';
+
+  @override
+  String get settings_delete_after_hint =>
+      'Automatikus eltávolítás x óra után.';
+
+  @override
+  String get settings_zero_off => '0 = KI';
+
+  @override
+  String get settings_autodownload_subscriptions =>
+      'Feliratkozott epizódok automatikus letöltése';
+
+  @override
+  String get settings_autodownload_subscriptions_hint =>
+      'Automatikusan letölti az új epizódokat a feliratkozott podcastokból.';
+
+  @override
+  String get profileScreenNoRecentlyPlayed =>
+      'Még nincs nemrég hallgatott epizód.';
+
+  @override
+  String get profileScreenSubscriptionsTitle => 'Feliratkozott műsorok';
+
+  @override
+  String get profileScreenAppIdTitle => 'Alkalmazás-azonosító';
+
+  @override
+  String get profileScreenIdCopied => 'Azonosító kimásolva';
+
+  @override
+  String get profileScreenPlaybackSpeedTitle => 'Lejátszási sebesség';
+
+  @override
+  String profileScreenPlaybackSpeedValue(Object value) {
+    return '$value×';
+  }
+
+  @override
+  String get commonOk => 'OK';
+
+  @override
+  String get commonCancel => 'Mégse';
+
+  @override
+  String get commonCount => 'Darab';
+
+  @override
+  String get commonDone => 'Kész';
 }

@@ -98,6 +98,10 @@ class AppLocalizationsEn extends AppLocalizations {
   String get podcastDetailSubscribeButton => 'Subscribe';
 
   @override
+  String get homeScreenSubscribedPodcastsEmptyHint =>
+      'No subscriptions yet — discover podcasts and tap “Subscribe”.';
+
+  @override
   String get homeScreenSubscribedPodcastsTitle => 'Subscribed Shows';
 
   @override
@@ -292,6 +296,19 @@ class AppLocalizationsEn extends AppLocalizations {
       'Unsubscribed successfully!';
 
   @override
+  String get unsubscribeDialogTitle => 'Unsubscribe';
+
+  @override
+  String get unsubscribeDialogContent =>
+      'Do you want to delete the downloaded episodes for this podcast?';
+
+  @override
+  String get unsubscribeDialogDeleteButton => 'Delete Episodes';
+
+  @override
+  String get unsubscribeDialogKeepButton => 'Keep Episodes';
+
+  @override
   String get nowPlayingScreenTitle => 'Now Playing';
 
   @override
@@ -310,4 +327,162 @@ class AppLocalizationsEn extends AppLocalizations {
   @override
   String get podcastNotFoundError =>
       'Sorry, the selected show could not be found.';
+
+  @override
+  String get podcastListItem_subscribed => 'Subscribed';
+
+  @override
+  String get podcastListItem_unsubscribe => 'Unsubscribe';
+
+  @override
+  String get podcastListItem_subscribe => 'Subscribe';
+
+  @override
+  String get podcastListItem_unsubscribed => 'Unsubscribed';
+
+  @override
+  String get podcastListItem_subtitleFallback => 'Klubrádió show';
+
+  @override
+  String get podcastListItem_openDetails => 'Open podcast details';
+
+  @override
+  String get downloads_tab_active => 'Active';
+
+  @override
+  String get downloads_tab_done => 'Completed';
+
+  @override
+  String get downloads_empty_active => 'No active downloads';
+
+  @override
+  String get downloads_empty_done => 'No completed downloads';
+
+  @override
+  String get downloads_status_waiting => 'Waiting';
+
+  @override
+  String get downloads_status_running => 'Downloading';
+
+  @override
+  String get downloads_status_done => 'Completed';
+
+  @override
+  String get downloads_status_failed => 'Failed';
+
+  @override
+  String get downloads_status_canceled => 'Canceled';
+
+  @override
+  String get downloads_status_unknown => 'Unknown';
+
+  @override
+  String get downloads_action_pause => 'Pause';
+
+  @override
+  String get downloads_action_resume => 'Resume';
+
+  @override
+  String get downloads_action_cancel => 'Cancel';
+
+  @override
+  String get downloads_action_delete => 'Delete';
+
+  @override
+  String get ep_action_resume => 'Resume';
+
+  @override
+  String get ep_action_downloaded => 'Downloaded';
+
+  @override
+  String get ep_action_retry => 'Retry';
+
+  @override
+  String get ep_action_download => 'Download';
+
+  @override
+  String get settings_title_downloads => 'Downloads';
+
+  @override
+  String get settings_wifi_only => 'Wi-Fi only';
+
+  @override
+  String get settings_wifi_only_mobile_default => 'Default on mobile: ON';
+
+  @override
+  String get settings_wifi_only_desktop_default => 'Default on desktop: OFF';
+
+  @override
+  String get settings_max_parallel => 'Max concurrent downloads';
+
+  @override
+  String get settings_retention_section => 'Retention';
+
+  @override
+  String get settings_keep_all => 'Keep all';
+
+  @override
+  String get settings_keep_latest_label => 'Keep only the last n';
+
+  @override
+  String get settings_keep_latest => 'Keep latest episodes';
+
+  @override
+  String get settings_keep_latest_hint =>
+      'Keeps the newest n episodes per podcast.';
+
+  @override
+  String get settings_delete_after_heard_label =>
+      'Delete x hours after listened';
+
+  @override
+  String get settings_delete_after_hours => 'Delete after (hours)';
+
+  @override
+  String get settings_delete_after_hint =>
+      'Automatically remove x hours after playback.';
+
+  @override
+  String get settings_zero_off => '0 = OFF';
+
+  @override
+  String get settings_autodownload_subscriptions =>
+      'Autodownload subscribed episodes';
+
+  @override
+  String get settings_autodownload_subscriptions_hint =>
+      'Automatically download new episodes from subscribed podcasts.';
+
+  @override
+  String get profileScreenNoRecentlyPlayed =>
+      'No recently played episodes yet.';
+
+  @override
+  String get profileScreenSubscriptionsTitle => 'Subscribed shows';
+
+  @override
+  String get profileScreenAppIdTitle => 'App ID';
+
+  @override
+  String get profileScreenIdCopied => 'ID copied';
+
+  @override
+  String get profileScreenPlaybackSpeedTitle => 'Playback speed';
+
+  @override
+  String profileScreenPlaybackSpeedValue(Object value) {
+    return '$value×';
+  }
+
+  @override
+  String get commonOk => 'OK';
+
+  @override
+  String get commonCancel => 'Cancel';
+
+  @override
+  String get commonCount => 'Count';
+
+  @override
+  String get commonDone => 'Fertig';
 }

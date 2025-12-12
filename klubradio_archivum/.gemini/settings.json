@@ -1,0 +1,22 @@
+{
+  "model": {
+    "name": "gemini-2.5-flash"
+  },
+  "advanced": {
+    "autoConfigureMemory": true
+  },
+  "tools": {
+    "autoAccept": false,
+    "shell": {
+      "showColor": true
+    }
+  },
+  "ui": {
+    "showMemoryUsage": true,
+    "showLineNumbers": true,
+    "footer": {
+      "hideContextPercentage": false
+    },
+    "showStatusInTitle": true
+  }
+}

@@ -127,6 +127,7 @@
     "description": "Button-Beschriftung zum Abonnieren des Podcasts."
   },
 
+  "homeScreenSubscribedPodcastsEmptyHint": "Noch keine Abos – entdecke Podcasts und tippe auf „Abonnieren“.",
   "homeScreenSubscribedPodcastsTitle": "Abonnierte Sendungen",
   "@homeScreenSubscribedPodcastsTitle": {
     "description": "Überschrift für den Bereich der abonnierten Sendungen auf dem Startbildschirm."
@@ -406,13 +407,19 @@
   "@podcastDetailScreenSubscribeSuccess": {
     "description": "Snackbar-Nachricht, die nach erfolgreichem Abonnieren eines Podcasts angezeigt wird."
   },
-  "podcastDetailScreenUnsubscribeSuccess": "Abonnement erfolgreich beendet!",
+  "podcastDetailScreenUnsubscribeSuccess": "Erfolgreich abbestellt!",
   "@podcastDetailScreenUnsubscribeSuccess": {
-    "description": "Snackbar-Nachricht, die nach erfolgreichem Beenden eines Abonnements angezeigt wird."
+    "description": "Snackbar-Nachricht nach erfolgreichem Abbestellen eines Podcasts."
   },
 
+  "unsubscribeDialogTitle": "Abbestellen",
+  "unsubscribeDialogContent": "Möchten Sie die heruntergeladenen Episoden für diesen Podcast löschen?",
+  "unsubscribeDialogDeleteButton": "Episoden löschen",
+  "unsubscribeDialogKeepButton": "Episoden behalten",
+
   "nowPlayingScreenTitle": "Aktuelle Wiedergabe",
-  "@nowPlayingScreenTitle": {"description": "Titel für den Bildschirm 'Aktuelle Wiedergabe'."
+  "@nowPlayingScreenTitle": {
+    "description": "Titel für den 'Aktuelle Wiedergabe'-Bildschirm."
   },
   "nowPlayingScreenNoEpisode": "Aktuell wird keine Episode abgespielt.",
   "@nowPlayingScreenNoEpisode": {
@@ -447,5 +454,61 @@
   "podcastNotFoundError": "Die ausgewählte Sendung konnte leider nicht gefunden werden.",
   "@podcastNotFoundError": {
     "description": "Fehlermeldung, wenn ein aus einer Liste ausgewählter Podcast nicht abgerufen werden kann."
-  }
+  },
+
+  "podcastListItem_unsubscribe": "Abo beenden",
+  "podcastListItem_subscribed": "Abonniert",
+  "podcastListItem_subscribe": "Abonnieren",
+  "podcastListItem_unsubscribed": "Abo beendet",
+  "podcastListItem_subtitleFallback": "Klubrádió-Sendung",
+  "podcastListItem_openDetails": "Podcastdetails öffnen",
+
+  "downloads_tab_active": "Aktiv",
+  "downloads_tab_done": "Fertig",
+  "downloads_empty_active": "Keine aktiven Downloads",
+  "downloads_empty_done": "Keine fertigen Downloads",
+  "downloads_status_waiting": "Wartet",
+  "downloads_status_running": "Lädt",
+  "downloads_status_done": "Fertig",
+  "downloads_status_failed": "Fehler",
+  "downloads_status_canceled": "Abgebrochen",
+  "downloads_status_unknown": "Unbekannt",
+  "downloads_action_pause": "Pause",
+  "downloads_action_resume": "Fortsetzen",
+  "downloads_action_cancel": "Abbrechen",
+  "downloads_action_delete": "Löschen",
+
+  "ep_action_resume": "Fortsetzen",
+  "ep_action_downloaded": "Heruntergeladen",
+  "ep_action_retry": "Erneut versuchen",
+  "ep_action_download": "Download",
+
+  "settings_title_downloads": "Downloads",
+  "settings_wifi_only": "Nur WLAN",
+  "settings_wifi_only_mobile_default": "Standard auf Mobil: AN",
+  "settings_wifi_only_desktop_default": "Standard auf Desktop: AUS",
+  "settings_max_parallel": "Max. gleichzeitige Downloads",
+  "settings_retention_section": "Aufbewahrung",
+  "settings_keep_all": "Alle behalten",
+  "settings_keep_latest_label": "Nur die letzten n",
+  "settings_keep_latest": "Letzte Episoden behalten",
+  "settings_keep_latest_hint": "Behält pro Podcast die neuesten n Episoden.",
+  "settings_delete_after_heard_label": "Nach „gehört” in x Stunden löschen",
+  "settings_delete_after_hours": "Löschen nach (Stunden)",
+  "settings_delete_after_hint": "Nach dem Anhören automatisch nach x Stunden entfernen.",
+  "settings_zero_off": "0 = AUS",
+  "settings_autodownload_subscriptions": "Automatisch abonnierte Episoden herunterladen",
+  "settings_autodownload_subscriptions_hint": "Neue Episoden von abonnierten Podcasts automatisch herunterladen.",
+
+  "profileScreenNoRecentlyPlayed": "Noch nichts kürzlich gehört.",
+  "profileScreenSubscriptionsTitle": "Abonnierte Sendungen",
+  "profileScreenAppIdTitle": "App-ID",
+  "profileScreenIdCopied": "ID kopiert",
+  "profileScreenPlaybackSpeedTitle": "Wiedergabegeschwindigkeit",
+  "profileScreenPlaybackSpeedValue": "{value}×",
+  "commonOk": "OK",
+  "commonCancel": "Abbrechen",
+  "commonCount": "Anzahl",
+  "commonDone": "Fertig"
+
 }
